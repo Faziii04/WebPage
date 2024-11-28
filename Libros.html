@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Libros</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="libros.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navbar de Bootstrap -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <!-- Reemplaza la imagen actual en tu navbar con este código -->
+            <div class="book-icon">
+                <div class="book">
+                    <!-- Portada -->
+                    <div class="cover">
+                        <div class="spine"></div>
+                    </div>
+                    <!-- Páginas -->
+                    <div class="page page-4"></div>
+                    <div class="page page-3"></div>
+                    <div class="page page-2"></div>
+                    <div class="page page-1"></div>
+                    <!-- Contraportada -->
+                    <div class="back-cover"></div>
+                </div>
+            </div>
+            <a class="navbar-brand" href="#">LecturaPlus</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Libros</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="Mangas.html">Manga</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="Tienda.html">Tienda</a>
+                    </li>
+                </ul>
+                <div class="d-flex">
+                    <!-- Botón de login -->
+                    <a href="Registro.html" class="btn btn-outline-light me-2" id="loginButton">Login</a>
+                    
+                    <!-- Perfil de usuario -->
+                    <div class="dropdown" id="userProfile" style="display: none;">
+                        <button class="btn btn-light dropdown-toggle" type="button" id="userDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+                            <i class="fas fa-user me-2"></i>
+                            <span id="userName"></span>
+                        </button>
+                        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="userDropdown">
+                            <li><a class="dropdown-item" href="#"><i class="fas fa-user-circle me-2"></i>Mi Perfil</a></li>
+                            <li><a class="dropdown-item" href="#"><i class="fas fa-cog me-2"></i>Configuración</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="#" id="logoutButton"><i class="fas fa-sign-out-alt me-2"></i>Cerrar Sesión</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Sección de Cards -->
+    <div class="container cards-section">
+        <h1 class="h2">LIBROS QUE TE PUEDEN INTERESAR</h1>
+        <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 ">
+            <div class="col">
+                <div class="card">
+                    <img src="imagenes/i1.jpeg" alt="">
+                    <div class="card__content">
+                        <p class="card__title">"El mapa de los anhelos"</p>
+                        <p class="card__description">La historia sigue a una protagonista que se encuentra en un 
+                            momento crucial de su vida cuando llega a sus manos un misterioso 
+                            juego llamado "El mapa de los anhelos". Siguiendo las instrucciones 
+                            de este juego, debe encontrar a alguien específico, lo que 
+                            desencadena una serie de eventos que la llevarán por un viaje emocional. 
+                            Es una historia de amor que explora las circunstancias adversas que 
+                            llevan a los personajes a conocerse, culminando en una narrativa 
+                            llena de esperanza y emociones profundas que suele dejar a los 
+                            lectores conmovidos.
+                            <p class="card__title">Género :</p>
+                            romántico,drama juvenil.
+                            </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card">
+                    <img src="imagenes/i2.jpeg" alt="">
+                    <div class="card__content">
+                        <p class="card__title">"A dos metros de ti"</p>
+                        <p class="card__description">Stella Grant es una joven que necesita tener control 
+                            sobre su espacio para mantener su salud debido a una 
+                            enfermedad pulmonar que la ha llevado a pasar gran parte 
+                            de su vida en el hospital. La historia explora su relación 
+                            con Will Newman, otro paciente con la misma enfermedad, y 
+                            la lucha por mantener la distancia física necesaria entre ellos.
+                            <p class="card__title">Género :</p>
+                            Literatura juvenil, romántica.
+                            </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card">
+                    <img src="imagenes/i3.jpeg" alt="">
+                    <div class="card__content">
+                        <p class="card__title">"El rey oscuro (el miedo es poder)"</p>
+                        <p class="card__description">Luca Vitale se encuentra solo y 
+                            abandonado tras casi perder la vida, incapaz de olvidar a 
+                            Alayna. La historia sigue su lucha por seguir adelante y 
+                            el impacto del poder en su carácter, mientras enfrenta 
+                            recuerdos dolorosos y desafíos personales.
+                            <p class="card__title">Género :</p>
+                            Suspenso, romance,drama.
+                            </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card">
+                    <img src="imagenes/i4.jpeg" alt="">
+                    <div class="card__content">
+                        <p class="card__title">"Boulevard(la versión de Flor)"</p>
+                        <p class="card__description"> La historia sigue a Hasley y Luke, 
+                            dos jóvenes que se encuentran en situaciones difíciles. A 
+                            través de su amistad y amor, ambos intentan superar sus problemas 
+                            personales y encontrar un camino hacia la felicidad.
+                            <p class="card__title">Género :</p>
+                            Romance juvenil, drama.
+                            </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card">
+                    <img src="imagenes/i5.jpeg" alt="">
+                    <div class="card__content">
+                        <p class="card__title">"Rey de guerra y sangre"</p>
+                        <p class="card__description">La saga sigue a los vampiros y su lucha 
+                            por el poder en un mundo lleno de peligros y oscuridad. 
+                            La protagonista, involucrada en un romance insaciable, busca 
+                            venganza y justicia en un entorno hostil.
+                            <p class="card__title">Género :</p>
+                            Fantasía, romance.
+                            </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card">
+                    <img src="imagenes/i6.jpeg" alt="">
+                    <div class="card__content">
+                        <p class="card__title">"Una corte de rosas y espinas"</p>
+                        <p class="card__description">Feyre, una cazadora de diecinueve años, 
+                            mata a un lobo en el bosque y es arrastrada a Prythian, una tierra 
+                            de hadas y magia, donde debe enfrentarse a desafíos que pondrán 
+                            a prueba su valentía y su corazón.
+                            <p class="card__title">Género :</p>
+                            Alta fantasía, juvenil.
+                            </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card">
+                    <img src="imagenes/i7.jpeg" alt="">
+                    <div class="card__content">
+                        <p class="card__title">"El juicio del diablo (una guerra de poder en Rusia)"</p>
+                        <p class="card__description">Adeline arriesga todo en su lucha contra los 
+                            hermanos Petrov, enfrentándose a una guerra sangrienta y una pasión 
+                            indestructible mientras busca justicia y poder en una Rusia llena de traiciones.
+                            <p class="card__title">Género :</p>
+                            Erótica, drama.
+                            </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card">
+                    <img src="imagenes/i8.jpeg" alt="">
+                    <div class="card__content">
+                        <p class="card__title">"Nadie tiene que saberlo excepto tú"</p>
+                        <p class="card__description">Este libro de autoayuda ofrece un lugar 
+                            seguro para sanar el corazón y enfrentar los altibajos de la vida, 
+                            proporcionando herramientas para superar situaciones difíciles 
+                            y encontrar la paz interior.
+                            <p class="card__title">Género :</p>
+                            Autoayuda.
+                            </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card">
+                    <img src="imagenes/i9.jpeg" alt="">
+                    <div class="card__content">
+                        <p class="card__title">"La reina de nada"</p>
+                        <p class="card__description">Jude, la exiliada reina mortal de Faerie, 
+                            lucha por recuperar su poder y enfrentarse a traiciones mientras 
+                            busca vengar su destino y proteger a los que ama en un mundo lleno 
+                            de magia y peligros.
+                            <p class="card__title">Género :</p>
+                            Fantasía.
+                            </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card">
+                    <img src="imagenes/i10.jpeg" alt="">
+                    <div class="card__content">
+                        <p class="card__title">"Belleza oscura (la sabiduría es poder)"</p>
+                        <p class="card__description">Luca Vitale, heredero de un mundo oscuro, 
+                            y Alayna Novak, una mujer con un pasado sangriento, navegan por un 
+                            entorno mafioso donde las leyes y tradiciones se cumplen estrictamente, 
+                            y la sabiduría es la clave para sobrevivir.
+                            <p class="card__title">Género :</p>
+                            Drama,romance.
+                            </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card">
+                    <img src="imagenes/i11.jpeg" alt="">
+                    <div class="card__content">
+                        <p class="card__title">"Anhelo(Serie Crave 1)"</p>
+                        <p class="card__description">Una historia de vampiros más adictiva 
+                            que Crepúsculo. Sigue a una chica que enfrenta sus miedos ya un 
+                            vampiro con un oscuro pasado en una escuela llena de misterios.
+                            <p class="card__title">Género :</p>
+                            Romance juvenil, fantasía
+                            </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card">
+                    <img src="imagenes/i12.jpeg" alt="">
+                    <div class="card__content">
+                        <p class="card__title">"Fabricante de lágrimas"</p>
+                        <p class="card__description">En un orfanato, los niños crecen escuchando 
+                            la leyenda de un artesano que forja todos los miedos y angustias 
+                            humanos. La protagonista, Nica, cree que uno de los personajes de 
+                            estas historias es real y afectará su vida.
+                            <p class="card__title">Género :</p>
+                            Romance juvenil, romance oscuro.
+                            </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card">
+                    <img src="imagenes/i13.jpeg" alt="">
+                    <div class="card__content">
+                        <p class="card__title">"Una Corona de Huesos Dorados (A Crown of Gilded Bones)"</p>
+                        <p class="card__description">La historia continúa siguiendo a Poppy, quien ha 
+                            descubierto su verdadera identidad y poderes. Enfrenta desafíos políticos 
+                            y personales mientras lucha por su reino y su relación con Casteel. La 
+                            trama explora sus nuevas responsabilidades como líder y los conflictos 
+                            que debe resolver.
+                            <p class="card__title">Género :</p>
+                            Fantasía, romance.
+                            </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card">
+                    <img src="imagenes/i14.jpeg" alt="">
+                    <div class="card__content">
+                        <p class="card__title">"Una Sombra en las Brasas (A Shadow in the Embers)"</p>
+                        <p class="card__description">Este libro se centra en nuevos personajes y 
+                            profundiza en el mundo establecido en los libros anteriores. Sigue 
+                            las aventuras de nuevos protagonistas que enfrentan desafíos complejos 
+                            en un reino lleno de magia y conflictos.
+                            <p class="card__title">Género :</p>
+                            Fantasía, romance.
+                            </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card">
+                    <img src="imagenes/i15.jpeg" alt="">
+                    <div class="card__content">
+                        <p class="card__title">"Un Reino de Carne y Fuego (A Kingdom of Flesh and Fire)"</p>
+                        <p class="card__description">En esta entrega, Poppy y Casteel continúan su viaje 
+                            juntos, enfrentando amenazas externas e internas. La novela explora su relación 
+                            romántica mientras luchan por sobrevivir y proteger su reino de múltiples peligros.
+                            <p class="card__title">Género :</p>
+                            Fantasía, romance.
+                            </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card">
+                    <img src="imagenes/i16.jpeg" alt="">
+                    <div class="card__content">
+                        <p class="card__title">"De Sangre y Cenizas (From Blood and Ash)"</p>
+                        <p class="card__description">Este es el primer libro de la serie, que introduce 
+                            a Poppy, una joven con un destino único que ha sido protegida toda su vida. 
+                            Conoce a Hawke, un guardia que cambiará completamente su perspectiva del mundo, 
+                            revelando secretos que transformarán su vida.
+                            <p class="card__title">Género :</p>
+                            Fantasía, romance.
+                            </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Sobre Nosotros</h3>
+                <ul class="footer-links">
+                    <li><a href="#">Nuestra Historia</a></li>
+                    <li><a href="#">Misión y Visión</a></li>
+                    <li><a href="#">Equipo</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Enlaces Útiles</h3>
+                <ul class="footer-links">
+                    <li><a href="#">Inicio</a></li>
+                    <li><a href="#">Libros</a></li>
+                    <li><a href="#">Manga</a></li>
+                    <li><a href="#">Tienda</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Contacto</h3>
+                <ul class="footer-links">
+                    <li><a href="#">Soporte</a></li>
+                    <li><a href="#">FAQ</a></li>
+                    <li><a href="#">Contacto</a></li>
+                </ul>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2024 LecturaPlus. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+    <!-- Scripts de Bootstrap -->
+    <script src="Inicio.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

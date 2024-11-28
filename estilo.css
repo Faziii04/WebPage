@@ -1,0 +1,438 @@
+/* ====== IMPORTS ====== */
+@import url('https://fonts.googleapis.com/css2?family=Jacquarda+Bastarda+9&family=Jacques+Francois+Shadow&family=Leckerli+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Hanalei+Fill&family=Jacquarda+Bastarda+9&family=Jacques+Francois+Shadow&family=Leckerli+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Hanalei+Fill&family=Jacquarda+Bastarda+9&family=Jacques+Francois+Shadow&family=Leckerli+One&family=Rubik+Glitch&display=swap');
+
+/* Estilos para el icono del libro */
+.book-icon {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 0.5rem;
+}
+
+.book {
+    position: relative;
+    width: 48px;
+    height: 60px;
+    cursor: pointer;
+    transform-style: preserve-3d;
+    perspective: 1500px;
+}
+
+/* Portada del libro */
+.cover {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to right, #6901e1, #f31986); /* Nuevo gradiente */
+    border-radius: 2px;
+    border-top-right-radius: 1px;
+    border-bottom-right-radius: 1px;
+    transform-origin: left;
+    transition: transform 0.3s;
+}
+
+/* Lomo del libro */
+.spine {
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background-color: #6901e1; /* Color del lomo ajustado */
+    border-top-left-radius: 2px;
+    border-bottom-left-radius: 2px;
+}
+
+/* Páginas */
+.page {
+    position: absolute;
+    background-color: #ffffff; /* Color de las páginas ajustado */
+    border-top-right-radius: 1px;
+    border-bottom-right-radius: 1px;
+    transform-origin: left;
+    transition: transform 0.3s;
+    z-index: -1;
+    
+}
+
+.page-1 {
+    inset: 2.5px;
+}
+
+.page-2 {
+    inset: 2px;
+}
+
+.page-3 {
+    inset: 1.5px;
+}
+
+.page-4 {
+    inset: 1px;
+}
+
+/* Contraportada */
+.back-cover {
+    position: absolute;
+    inset: 0;
+    background-color: #6901e1; /* Color de la contraportada ajustado */
+    border-radius: 2px;
+    border-top-right-radius: 1px;
+    border-bottom-right-radius: 1px;
+    z-index: -1;
+}
+
+/* Animaciones al hover */
+.book:hover .cover {
+    transform: rotateY(-60deg);
+}
+
+.book:hover .page-4 {
+    transform: rotateY(-45deg);
+}
+
+.book:hover .page-3 {
+    transform: rotateY(-30deg);
+}
+
+.book:hover .page-2 {
+    transform: rotateY(-15deg);
+}
+
+/* Efecto de presión */
+.book:active {
+    transform: translate(2px, 2px);
+    transition: transform 0.3s;
+}
+
+/* ====== ESTILOS GENERALES ====== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Hanalei Fill", system-ui;
+    font-weight: 400;
+    font-style: normal;
+    color: #333;
+    width: 100%;
+    min-height: 100vh;
+    background: linear-gradient(to top,#f31986, #6901e1) !important;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+main {
+    flex: 1;
+}
+
+.container {
+    padding-bottom: 0px;
+    max-width: 1140px;
+    margin: 0 auto;
+}
+
+/* ====== IMÁGENES ====== */
+.i {
+    width: 50px;
+    height: 50px;
+}
+
+.im {
+    width: 25px;
+    height: 25px;
+}
+
+/* ====== HEADER Y NAVEGACIÓN ====== */
+.site-header {
+    background-color: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(5px);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-brand {
+    font-size: 1.8rem;
+    color: antiquewhite;
+}
+
+/* ====== CARRUSEL ====== */
+.carousel {
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.car {
+    height: 400px;
+}
+
+.carousel-caption {
+    background: rgba(0, 0, 0, 0.6);
+    border-radius: 8px;
+    padding: 1.5rem;
+}
+
+/* ====== CARDS ====== */
+.cards-section {
+    padding: 2rem 0;
+}
+
+.feature-card {
+    background: rgba(255, 255, 255, 0.329);
+    backdrop-filter: blur(5px);
+    border-radius: 10px;
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    transition: transform 0.3s;
+    overflow: hidden;
+    animation: fadeIn 0.5s ease-out;
+}
+
+.feature-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.20);
+}
+
+.feature-card img {
+    width: 100%;
+    object-fit: cover;
+    transition: all .5s;
+}
+
+.feature-card:hover img {
+    transform: scale(1.2);
+}
+
+/* ====== FOOTER MEJORADO ====== */
+.site-footer {
+    background: linear-gradient(to bottom, rgba(243, 25, 134, 0.95), rgba(105, 1, 225, 0.95));
+    color: white;
+    padding: 4rem 0 2rem;
+    margin-top: auto;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 -10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 3rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.footer-section {
+    text-align: center;
+}
+
+.footer-section h3 {
+    font-family: "Rubik Glitch", system-ui;
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+    color: antiquewhite;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.footer-links {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-links li {
+    margin-bottom: 1rem;
+}
+
+.footer-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+    display: inline-block;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+.footer-links a:hover {
+    background: rgba(255, 255, 255, 0.1);
+    transform: translateX(5px);
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+}
+
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-top: 1rem;
+}
+
+.social-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.5rem;
+    transition: all 0.3s ease;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.social-links a:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.footer-bottom {
+    text-align: center;
+    margin-top: 3rem;
+    padding-top: 2rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.footer-bottom p {
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+/* Ajustes responsive para el footer */
+@media (max-width: 768px) {
+    .footer-content {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .footer-section {
+        padding: 0 1rem;
+    }
+
+    .footer-section h3 {
+        font-size: 1.5rem;
+    }
+
+    .social-links {
+        margin-top: 0.5rem;
+    }
+}
+
+/* ====== ANIMACIONES ====== */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ====== MEDIA QUERIES ====== */
+@media (max-width: 480px) {
+    .card-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+    
+    .carousel-item {
+        height: 200px;
+    }
+    
+    .navbar-brand {
+        font-size: 1.2rem;
+    }
+}
+
+@media (min-width: 481px) and (max-width: 768px) {
+    .card-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
+    }
+    
+    .carousel-item {
+        height: 300px;
+    }
+    
+    .navbar-brand {
+        font-size: 1.4rem;
+    }
+}
+
+@media (min-width: 769px) {
+    .card-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 2rem;
+    }
+    
+    .carousel-item {
+        height: 400px;
+    }
+}
+
+/* Estilos del menú dropdown */
+.dropdown-menu {
+    min-width: 200px;
+    background: linear-gradient(to top, #f31986, #6901e1);
+    border: none;
+    padding: 8px;
+}
+
+.dropdown-item {
+    color: white !important; /* Texto blanco para los items */
+    border-radius: 4px;
+    padding: 8px 16px;
+}
+
+.dropdown-item i {
+    width: 20px;
+}
+
+.dropdown-item:hover {
+    background-color: rgba(255, 255, 255, 0.1); /* Fondo semi-transparente al hover */
+    color: white;
+}
+
+/* Línea divisoria en el dropdown */
+.dropdown-divider {
+    border-color: rgba(255, 255, 255, 0.2); /* Línea divisoria semi-transparente */
+    margin: 4px 0;
+}
+
+/* Estilos del botón del perfil */
+#userProfile .btn {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: linear-gradient(to top, #f31986, #6901e1);
+    color: white;
+    border: none;
+}
+
+/* Estilos para el hover del botón */
+#userProfile .btn:hover {
+    background: linear-gradient(to top, #d41573, #5801bd);
+    color: white;
+}
+
+/* Estilos para cuando el botón está activo/presionado */
+#userProfile .btn:active {
+    background: linear-gradient(to top, #f31986, #6901e1);
+    color: white;
+}
+
+/* Estilos para cuando el dropdown está abierto */
+#userProfile .btn.show {
+    background: linear-gradient(to top, #f31986, #6901e1);
+    color: white;
+}
+
+/* Ajuste para la flecha del dropdown */
+.dropdown-toggle::after {
+    border-top-color: white;
+}

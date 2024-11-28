@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mangas</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="mangas.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navbar de Bootstrap -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <!-- Reemplaza la imagen actual en tu navbar con este código -->
+            <div class="book-icon">
+                <div class="book">
+                    <!-- Portada -->
+                    <div class="cover">
+                        <div class="spine"></div>
+                    </div>
+                    <!-- Páginas -->
+                    <div class="page page-4"></div>
+                    <div class="page page-3"></div>
+                    <div class="page page-2"></div>
+                    <div class="page page-1"></div>
+                    <!-- Contraportada -->
+                    <div class="back-cover"></div>
+                </div>
+            </div>
+            <a class="navbar-brand" href="#">LecturaPlus</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="Libros.html">Libros</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Manga</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="Tienda.html">Tienda</a>
+                    </li>
+                </ul>
+                <div class="d-flex">
+                    <!-- Botón de login -->
+                    <a href="Registro.html" class="btn btn-outline-light me-2" id="loginButton">Login</a>
+                    
+                    <!-- Perfil de usuario -->
+                    <div class="dropdown" id="userProfile" style="display: none;">
+                        <button class="btn btn-light dropdown-toggle" type="button" id="userDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+                            <i class="fas fa-user me-2"></i>
+                            <span id="userName"></span>
+                        </button>
+                        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="userDropdown">
+                            <li><a class="dropdown-item" href="#"><i class="fas fa-user-circle me-2"></i>Mi Perfil</a></li>
+                            <li><a class="dropdown-item" href="#"><i class="fas fa-cog me-2"></i>Configuración</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="#" id="logoutButton"><i class="fas fa-sign-out-alt me-2"></i>Cerrar Sesión</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Sección de Cards -->
+    <div class="container cards-section">
+        <h1 class="h2">ANIMES RECOMENDADOS</h1>
+        <div class="row">
+            <div class="col">
+                <div class="card">
+                    <div class="first-content">
+                        <span><img src="imagenes/img1.jfif" alt="#" class="img"></span>
+                    </div>
+                    <div class="second-content">
+                        <p class="card__title">"BUNGO STRAY DOGS"</p>
+                        <p class="card__description">Una historia sobre una agencia de detectives con poderes sobrenaturales, 
+                            donde cada personaje está basado en un famoso escritor literario. Sigue a 
+                            Atsushi Nakajima, un joven con la habilidad de transformarse en un tigre, 
+                            que se une a esta peculiar agencia.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card">
+                    <div class="first-content">
+                        <span><img src="imagenes/img2.jfif" alt="#" class="img"></span>
+                    </div>
+                    <div class="second-content">
+                        <p class="card__title">"MASAMUNE-KUN NO REVENGE"</p>
+                        <p class="card__description">Un chico que fue rechazado y humillado 
+                            en su infancia por una niña rica, decide adelgazar y convertirse 
+                            en un chico atractivo para vengarse de ella. Sin embargo, su plan 
+                            de venganza no sale como esperaba.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card">
+                    <div class="first-content">
+                        <span><img src="imagenes/img3.jfif" alt="#" class="img"></span>
+                    </div>
+                    <div class="second-content">
+                        <p class="card__title">"HORIMIYA"</p>
+                        <p class="card__description">Una historia romántica sobre dos estudiantes 
+                            de secundaria que parecen muy diferentes en la escuela: Kyoko Hori, 
+                            una chica popular y estudianosa, y Izumi Miyamura, un chico que parece 
+                            tímido pero tiene un lado completamente diferente fuera de la escuela.
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card">
+                    <div class="first-content">
+                        <span><img src="imagenes/img4.jfif" alt="#" class="img"></span>
+                    </div>
+                    <div class="second-content">
+                        <p class="card__title">"SAY(I LOVE YOU)"</p>
+                        <p class="card__description">Mei Tachibana es una estudiante solitaria que 
+                            decide no hacer amigos después de malas experiencias pasadas. Todo 
+                            cambia cuando conoce a Yamato Kurosawa, un chico popular que se interesa en ella.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card">
+                    <div class="first-content">
+                        <span><img src="imagenes/img5.jfif" alt="#" class="img"></span>
+                    </div>
+                    <div class="second-content">
+                        <p class="card__title">"MY LITTLE MONSTER"</p>
+                        <p class="card__description">Mizutani Shizuku, una estudiante obsesionada con 
+                            sus estudios, conoce a Haru Yoshida, un compañero impredecible y problemático. 
+                            A pesar de sus personalidades opuestas, desarrollan una relación única.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card">
+                    <div class="first-content">
+                        <span><img src="imagenes/img6.jfif" alt="#" class="img"></span>
+                    </div>
+                    <div class="second-content">
+                        <p class="card__title">"TOILET-BOUND HANAKO-KUN"</p>
+                        <p class="card__description">Una historia sobrenatural sobre Hanako, un espíritu 
+                            que habita en los baños de una escuela, y Nene Yashiro, una estudiante que 
+                            hace un pacto con él. Juntos investigan fenómenos sobrenaturales en la escuela.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card">
+                    <div class="first-content">
+                        <span><img src="imagenes/img7.jfif" alt="#" class="img"></span>
+                    </div>
+                    <div class="second-content">
+                        <p class="card__title">"ANOTHER"</p>
+                        <p class="card__description">Un anime de horror que sigue a Kouichi Sakakibara, 
+                            un estudiante que se muda a un pueblo y descubre un misterioso secreto en su 
+                            clase relacionado con una alumna llamada Mei Misaki y una serie de muertes inexplicables.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card">
+                    <div class="first-content">
+                        <span><img src="imagenes/img8.jfif" alt="#" class="img"></span>
+                    </div>
+                    <div class="second-content">
+                        <p class="card__title">"DEATH NOTE"</p>
+                        <p class="card__description">Un estudiante llamado Light Yagami encuentra un 
+                            cuaderno que le permite matar a cualquier persona escribiendo su nombre. 
+                            Decide usar este poder para crear un mundo libre de criminales, lo que 
+                            atrae la atención del detective L.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card">
+                    <div class="first-content">
+                        <span><img src="imagenes/img9.jfif" alt="#" class="img"></span>
+                    </div>
+                    <div class="second-content">
+                        <p class="card__title">"ELFEN LIED"</p>
+                        <p class="card__description">Una historia oscura sobre Lucy, una mutante 
+                            con poderes psíquicos conocida como "Diclonius", que escapa de un 
+                            laboratorio de investigación y deja un rastro de sangre a su paso.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card">
+                    <div class="first-content">
+                        <span><img src="imagenes/img10.jfif" alt="#" class="img"></span>
+                    </div>
+                    <div class="second-content">
+                        <p class="card__title">"HAIKYUU!"</p>
+                        <p class="card__description">Un anime deportivo que sigue a Shoyo Hinata, 
+                            un estudiante de baja estatura obsesionado con el volleyball, que 
+                            forma un equipo competitivo junto a Tobio Kageyama, su rival convertido 
+                            en compañero.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card">
+                    <div class="first-content">
+                        <span><img src="imagenes/img11.jfif" alt="#" class="img"></span>
+                    </div>
+                    <div class="second-content">
+                        <p class="card__title">"MAHOUTSUKAT NO YOME"</p>
+                        <p class="card__description">Chise Hatori es una joven que ha sido vendida 
+                            en una subasta como esclava mágica. Es comprada por Elias Ainsworth, un 
+                            misterioso mago con cabeza de bestia, quien la lleva a vivir a Inglaterra 
+                            y se convierte en su aprendiz de magia. La historia explora la relación 
+                            entre Chise y Elias, mientras ella aprende sobre un mundo mágico oculto 
+                            y desarrolla sus propias habilidades como hechicera.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card">
+                    <div class="first-content">
+                        <span><img src="imagenes/img12.jfif" alt="#" class="img"></span>
+                    </div>
+                    <div class="second-content">
+                        <p class="card__title">"SANKAREA:UNDYING LOVE"</p>
+                        <p class="card__description">Un anime que sigue a Chihiro Furuya, un chico 
+                            otaku obsesionado con los zombies, que conoce a Rea Sanka, una chica 
+                            de familia adinerada que escapa de su vida opresiva. Después de beber 
+                            una poción de inmortalidad, Rea se convierte en un zombi. La historia 
+                            explora su peculiar relación mientras Chihiro cuida de ella y aprende a 
+                            convivir con su nuevo estado.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card">
+                    <div class="first-content">
+                        <span><img src="imagenes/img13.jfif" alt="#" class="img"></span>
+                    </div>
+                    <div class="second-content">
+                        <p class="card__title">"THE DEVIL IS A PART-TIMER"</p>
+                        <p class="card__description">El Rey Demonio Sadao Maou es derrotado en su 
+                            mundo fantástico y se ve obligado a huir a la Tierra, específicamente 
+                            a Tokio, donde termina trabajando a tiempo parcial en un restaurante 
+                            de comida rápida. Junto con su general Alciel, intenta sobrevivir en 
+                            el mundo humano mientras planea su regreso, adaptándose a la vida 
+                            cotidiana de manera cómica.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card">
+                    <div class="first-content">
+                        <span><img src="imagenes/img14.jfif" alt="#" class="img"></span>
+                    </div>
+                    <div class="second-content">
+                        <p class="card__title">"YONA OF THE DAWN"</p>
+                        <p class="card__description">La princesa Yona vive una vida privilegiada 
+                            hasta que su primo Soo-Won asesina a su padre. Obligada a huir del 
+                            palacio, se embarca en un viaje de supervivencia y venganza, acompañada 
+                            por su amigo de la infancia Hak. Busca reunir a los Cinco Generales 
+                            legendarios para recuperar su reino.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card">
+                    <div class="first-content">
+                        <span><img src="imagenes/img15.jfif" alt="#" class="img"></span>
+                    </div>
+                    <div class="second-content">
+                        <p class="card__title">"SATSURIKU NO TENSHI"</p>
+                        <p class="card__description">Rachel Gardner, una joven, despierta en un 
+                            hospital misterioso y se encuentra atrapada en un edificio donde debe 
+                            escapar junto a Zack, un asesino en serie. Juntos deben sobrevivir 
+                            atravesando diferentes pisos, cada uno con desafíos y personajes únicos 
+                            y perturbadores.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card">
+                    <div class="first-content">
+                        <span><img src="imagenes/img16.jfif" alt="#" class="img"></span>
+                    </div>
+                    <div class="second-content">
+                        <p class="card__title">"KAMISAMA HAJIMEMASHITA"</p>
+                        <p class="card__description">Nanami Momozono es una estudiante de secundaria 
+                            que pierde su hogar y termina heredando accidentalmente el puesto de 
+                            deidad de un santuario. Nanami debe aprender a ser una diosa con la ayuda 
+                            de Tomoe, un zorro kitsune que inicialmente se resiste a servirle, pero 
+                            eventualmente desarrollan una relación romántica.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card">
+                    <div class="first-content">
+                        <span><img src="imagenes/img17 (1).jpeg" alt="#" class="img"></span>
+                    </div>
+                    <div class="second-content">
+                        <p class="card__title">"SERAPH OF THE END(Owari no Seraph)"</p>
+                        <p class="card__description">Un virus mortal ha exterminado a casi toda la 
+                            población humana mayor de 13 años. Los vampiros emergen para esclavizar 
+                            a los niños supervivientes. Yuichiro Hyakuya, después de perder a su 
+                            familia adoptiva a manos de los vampiros, se une a los Escuadrones 
+                            Demoniacos, un grupo militar que lucha contra los vampiros usando armas 
+                            y poderes sobrenaturales. Su objetivo principal es vengarse y liberar a la humanidad.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card">
+                    <div class="first-content">
+                        <span><img src="imagenes/img18.jpeg" alt="#" class="img"></span>
+                    </div>
+                    <div class="second-content">
+                        <p class="card__title">"DIABOLIK LOVERS"</p>
+                        <p class="card__description">Yui Komori es enviada a vivir con seis hermanos 
+                            vampiros de la familia Sakamaki. Cada hermano tiene una personalidad 
+                            diferente y todos son extremadamente posesivos y abusivos con ella. La 
+                            historia se centra en las complejas y oscuras dinámicas entre Yui y los 
+                            hermanos vampiros, explorando temas de dominación, manipulación y 
+                            relaciones toxicas en un contexto sobrenatural. Es conocido por su trama 
+                            oscura y relaciones controversial.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Sobre Nosotros</h3>
+                <ul class="footer-links">
+                    <li><a href="#">Nuestra Historia</a></li>
+                    <li><a href="#">Misión y Visión</a></li>
+                    <li><a href="#">Equipo</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Enlaces Útiles</h3>
+                <ul class="footer-links">
+                    <li><a href="#">Inicio</a></li>
+                    <li><a href="#">Libros</a></li>
+                    <li><a href="#">Manga</a></li>
+                    <li><a href="#">Tienda</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Contacto</h3>
+                <ul class="footer-links">
+                    <li><a href="#">Soporte</a></li>
+                    <li><a href="#">FAQ</a></li>
+                    <li><a href="#">Contacto</a></li>
+                </ul>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2024 LecturaPlus. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <!-- Scripts de Bootstrap -->
+    <script src="Inicio.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

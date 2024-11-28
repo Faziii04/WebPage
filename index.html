@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plataforma de Lectura</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="estilo.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navbar de Bootstrap -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <!-- Reemplaza la imagen actual en tu navbar con este código -->
+            <div class="book-icon">
+                <div class="book">
+                    <!-- Portada -->
+                    <div class="cover">
+                        <div class="spine"></div>
+                    </div>
+                    <!-- Páginas -->
+                    <div class="page page-4"></div>
+                    <div class="page page-3"></div>
+                    <div class="page page-2"></div>
+                    <div class="page page-1"></div>
+                    <!-- Contraportada -->
+                    <div class="back-cover"></div>
+                </div>
+            </div>
+            <a class="navbar-brand" href="#">LecturaPlus</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="Libros.html">Libros</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="Mangas.html">Manga</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="Tienda.html">Tienda</a>
+                    </li>
+                </ul>
+                <div class="d-flex">
+                    <!-- Botón de login -->
+                    <a href="Registro.html" class="btn btn-outline-light me-2" id="loginButton">Login</a>
+                    
+                    <!-- Perfil de usuario -->
+                    <div class="dropdown" id="userProfile" style="display: none;">
+                        <button class="btn btn-light dropdown-toggle" type="button" id="userDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+                            <i class="fas fa-user me-2"></i>
+                            <span id="userName"></span>
+                        </button>
+                        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="userDropdown">
+                            <li><a class="dropdown-item" href="#"><i class="fas fa-user-circle me-2"></i>Mi Perfil</a></li>
+                            <li><a class="dropdown-item" href="#"><i class="fas fa-cog me-2"></i>Configuración</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="#" id="logoutButton"><i class="fas fa-sign-out-alt me-2"></i>Cerrar Sesión</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Sección de Cards -->
+    <div class="container cards-section">
+        <div class="row g-4">
+            <div class="col-md-4">
+                <div class="card">
+                    <img src="imagenes/libros.jpeg"
+                        alt="Novedades Libros" class="car">
+                    <div class="card-body">
+                        <h5 class="card-title">Libros</h5>
+                        <p class="card-text">Descubre que la lectura es bonita.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card">
+                    <img src="imagenes/mangas.jpeg"
+                        alt="Manga Popular" class="car">
+                    <div class="card-body">
+                        <h5 class="card-title">Manga</h5>
+                        <p class="card-text">Los mangas que puedes encontrar.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card">
+                    <img src="imagenes/Adaptaciones.jpeg"
+                        alt="Adaptaciones Anime" class="car">
+                    <div class="card-body">
+                        <h5 class="card-title">Adaptaciones Anime</h5>
+                        <p class="card-text">Mangas que tienen adaptación al anime.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Carrusel -->
+    <div class="container my-5">
+        <div id="mainCarousel" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#mainCarousel" data-bs-slide-to="0" class="active"></button>
+                <button type="button" data-bs-target="#mainCarousel" data-bs-slide-to="1"></button>
+                <button type="button" data-bs-target="#mainCarousel" data-bs-slide-to="2"></button>
+                <button type="button" data-bs-target="#mainCarousel" data-bs-slide-to="3"></button>
+                <button type="button" data-bs-target="#mainCarousel" data-bs-slide-to="4"></button>
+                <button type="button" data-bs-target="#mainCarousel" data-bs-slide-to="5"></button>
+            </div>
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="imagenes/rec1.jpeg"alt="Recomendados" class="w-100 h-100">
+                    <div class="carousel-caption">
+                        <h5>Recomendados</h5>
+                        <p>.</p>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="imagenes/rec2.jpeg" alt="Recomendados" class="w-100 h-100">
+                    <div class="carousel-caption">
+                        <h5>Recomendados</h5>
+                        <p>.</p>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="imagenes/rec3.jpeg" alt="Recomendados" class="w-100 h-100">
+                    <div class="carousel-caption">
+                        <h5>Recomendados</h5>
+                        <p>.</p>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="imagenes/rec4.jpeg" alt="Recomendados" class="w-100 h-100">
+                    <div class="carousel-caption">
+                        <h5>Recomendados</h5>
+                        <p>.</p>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="imagenes/rec5.jpeg" alt="Recomendados" class="w-100 h-100">
+                    <div class="carousel-caption">
+                        <h5>Recomendados</h5>
+                        <p>.</p>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="imagenes/rec6.jpeg" alt="Recomendados" class="w-100 h-100">
+                    <div class="carousel-caption">
+                        <h5>Recomendados</h5>
+                        <p>.</p>
+                    </div>
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#mainCarousel" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon"></span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#mainCarousel" data-bs-slide="next">
+                <span class="carousel-control-next-icon"></span>
+            </button>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Sobre Nosotros</h3>
+                <ul class="footer-links">
+                    <li><a href="#">Nuestra Historia</a></li>
+                    <li><a href="#">Misión y Visión</a></li>
+                    <li><a href="#">Equipo</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Enlaces Útiles</h3>
+                <ul class="footer-links">
+                    <li><a href="#">Inicio</a></li>
+                    <li><a href="#">Libros</a></li>
+                    <li><a href="#">Manga</a></li>
+                    <li><a href="#">Tienda</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Contacto</h3>
+                <ul class="footer-links">
+                    <li><a href="#">Soporte</a></li>
+                    <li><a href="#">FAQ</a></li>
+                    <li><a href="#">Contacto</a></li>
+                </ul>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2024 LecturaPlus. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <!-- Scripts de Bootstrap -->
+    <script src="Inicio.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,512 @@
+/* ====== IMPORTS ====== */
+@import url('https://fonts.googleapis.com/css2?family=Hanalei+Fill&family=Jacquarda+Bastarda+9&family=Jacques+Francois+Shadow&family=Leckerli+One&family=Rubik+Glitch&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Hanalei+Fill&family=Jacquarda+Bastarda+9&family=Jacques+Francois+Shadow&family=Leckerli+One&family=Rubik+Glitch&display=swap');
+/* ====== VARIABLES ====== */
+:root {
+    --mobile-breakpoint: 480px;
+    --tablet-breakpoint: 768px;
+    --desktop-breakpoint: 1024px;
+    --large-desktop-breakpoint: 1200px;
+    --gradient-primary: linear-gradient(to top, #f31986, #6901e1);
+    --card-primary: rgb(163, 237, 255);
+    --card-hover: rgb(141, 171, 236);
+}
+
+/* Estilos para el icono del libro */
+.book-icon {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 0.5rem;
+}
+
+.book {
+    position: relative;
+    width: 48px;
+    height: 60px;
+    cursor: pointer;
+    transform-style: preserve-3d;
+    perspective: 1500px;
+}
+
+/* Portada del libro */
+.cover {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to right, #6901e1, #f31986); /* Nuevo gradiente */
+    border-radius: 2px;
+    border-top-right-radius: 1px;
+    border-bottom-right-radius: 1px;
+    transform-origin: left;
+    transition: transform 0.3s;
+}
+
+/* Lomo del libro */
+.spine {
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background-color: #6901e1; /* Color del lomo ajustado */
+    border-top-left-radius: 2px;
+    border-bottom-left-radius: 2px;
+}
+
+/* Páginas */
+.page {
+    position: absolute;
+    background-color: #ffffff; /* Color de las páginas ajustado */
+    border-top-right-radius: 1px;
+    border-bottom-right-radius: 1px;
+    transform-origin: left;
+    transition: transform 0.3s;
+    z-index: -1;
+    
+}
+
+.page-1 {
+    inset: 2.5px;
+}
+
+.page-2 {
+    inset: 2px;
+}
+
+.page-3 {
+    inset: 1.5px;
+}
+
+.page-4 {
+    inset: 1px;
+}
+
+/* Contraportada */
+.back-cover {
+    position: absolute;
+    inset: 0;
+    background-color: #6901e1; /* Color de la contraportada ajustado */
+    border-radius: 2px;
+    border-top-right-radius: 1px;
+    border-bottom-right-radius: 1px;
+    z-index: -1;
+}
+
+/* Animaciones al hover */
+.book:hover .cover {
+    transform: rotateY(-60deg);
+}
+
+.book:hover .page-4 {
+    transform: rotateY(-45deg);
+}
+
+.book:hover .page-3 {
+    transform: rotateY(-30deg);
+}
+
+.book:hover .page-2 {
+    transform: rotateY(-15deg);
+}
+
+/* Efecto de presión */
+.book:active {
+    transform: translate(2px, 2px);
+    transition: transform 0.3s;
+}
+
+
+/* ====== ESTILOS GENERALES ====== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Hanalei Fill", system-ui;
+    font-weight: 400;
+    font-style: normal;
+    line-height: 1.6;
+    min-height: 100vh;
+    width: 100%;
+    background: var(--gradient-primary);
+    display: flex;
+    flex-direction: column;
+    box-shadow: inset 0px 2px 3px rgba(0, 0, 0, 0.25);
+}
+.h2 {
+    font-size: 3rem;
+    font-family: "Rubik Glitch", system-ui;
+    font-weight: 400;
+    font-style: normal;
+    color: antiquewhite;
+}
+
+
+/* ====== NAVBAR PERSONALIZACIÓN ====== */
+.navbar {
+    padding: 1rem 0;
+    background-color: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(5px);
+}
+
+.i {
+    width: 50px;
+    height: 50px;
+    margin-right: 10px;
+}
+
+.navbar-brand {
+    font-size: 1.8rem;
+    color: antiquewhite !important;
+}
+
+/* ====== SECCIÓN DE CARDS ====== */
+.cards-section {
+    margin: 4rem auto;
+}
+
+.row {
+    justify-content: center;
+    gap: 2rem;
+}
+
+/* ====== CARDS ====== */
+.card {
+    width: 310px;
+    height: 510px;
+    background: var(--card-primary);
+    transition: all 0.4s;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.705);
+    font-size: 30px;
+    font-weight: 900;
+    margin: 2rem auto;
+    overflow: hidden;
+    position: relative;
+    z-index: 0; /* Asegura que las cards estén debajo del menú desplegable */
+    background: linear-gradient(180deg, rgba(163,251,255,1) 5%, rgba(54,230,251,1) 50%, rgba(38,30,226,1) 98%)
+}
+
+.card:hover {
+    border-radius: 15px;
+    cursor: pointer;
+    transform: scale(1.1);
+    box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.705);
+    background: var(--card-hover);
+    z-index: 1;
+    background: linear-gradient(180deg, rgba(163,251,255,1) 5%, rgba(54,230,251,1) 50%, rgba(38,30,226,1) 98%)
+}
+
+.card figure {
+    overflow: hidden;
+    border-radius: 10px 10px 0 0;
+    height: 100%;
+    width: 100%;
+    transition: all 0.4s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 1;
+    position: relative;
+}
+
+.card img {
+    width: 100%;
+    height: 100%;
+    border-radius: 10px 10px 0 0;
+    object-fit: cover;
+    transition: all .5s;
+}
+
+.card:hover img {
+    transform: scale(1.2);
+}
+
+.first-content {
+    height: 100%;
+    width: 100%;
+    transition: all 0.4s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 1;
+    border-radius: 10px;
+    position: relative;
+}
+
+.card:hover .first-content {
+    height: 0px;
+    opacity: 0;
+}
+
+.second-content {
+    height: 0%;
+    width: 100%;
+    opacity: 0;
+    display: flex;
+    display: table-column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 15px;
+    transition: all 0.4s;
+    font-size: 0px;
+    transform: rotate(90deg) scale(-1);
+    background: linear-gradient(0deg, rgba(163,251,255,1) 5%, rgba(54,230,251,1) 50%, rgba(38,30,226,1) 98%)
+}
+.card__description{
+    margin: 0px 10px 0px 20px;
+    font-size: 18px;
+    color: #050047;
+    line-height: 1.4;
+}
+.card__title {
+    margin: 20px 10px 40px 20px;
+    font-size: 30px;
+    color:#000000;
+    font-weight: 700;
+}
+.card:hover .second-content {
+    opacity: 1;
+    height: 100%;
+    font-size: 1.2rem;
+    transform: rotate(0deg);
+    background: linear-gradient(0deg, rgba(163,251,255,1) 5%, rgba(54,230,251,1) 50%, rgba(38,30,226,1) 98%)
+}
+
+.img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    object-fit: cover;
+}
+
+/* ====== FOOTER ====== */
+.site-footer {
+    background: linear-gradient(to bottom, rgba(243, 25, 134, 0.95), rgba(105, 1, 225, 0.95));
+    color: white;
+    padding: 4rem 0 2rem;
+    margin-top: auto;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 -10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 3rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.footer-section {
+    text-align: center;
+}
+
+.footer-section h3 {
+    font-family: "Rubik Glitch", system-ui;
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+    color: antiquewhite;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.footer-links {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-links li {
+    margin-bottom: 1rem;
+}
+
+.footer-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+    display: inline-block;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+.footer-links a:hover {
+    background: rgba(255, 255, 255, 0.1);
+    transform: translateX(5px);
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+}
+
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-top: 1rem;
+}
+
+.social-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.5rem;
+    transition: all 0.3s ease;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.social-links a:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.footer-bottom {
+    text-align: center;
+    margin-top: 3rem;
+    padding-top: 2rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.footer-bottom p {
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+/* ====== MEDIA QUERIES ====== */
+@media (max-width: 480px) {
+    .card, .first-content, .img {
+        width: 280px;
+        height: 400px;
+    }
+    
+    .footer-content {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    .navbar-brand {
+        font-size: 1.2rem;
+    }
+}
+
+@media (min-width: 481px) and (max-width: 768px) {
+    .card, .first-content, .img {
+        width: 300px;
+        height: 460px;
+    }
+    
+    .footer-content {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2rem;
+    }
+}
+
+@media (min-width: 769px) and (max-width: 1200px) {
+    .card, .first-content, .img {
+        width: 310px;
+        height: 480px;
+    }
+}
+
+/* ====== ANIMACIONES ====== */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.feature-card {
+    animation: fadeIn 0.5s ease-out;
+}
+
+/* ====== UTILIDADES ====== */
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
+}
+
+/* Estilos del menú dropdown */
+.dropdown-menu {
+    min-width: 200px;
+    background: linear-gradient(to top, #f31986, #6901e1);
+    border: none;
+    padding: 8px;
+    z-index: 1050; /* Asegura que el menú esté por encima de otros elementos */
+    position: absolute; /* Para que el z-index tenga efecto */
+}
+
+.dropdown-item {
+    color: white !important; /* Texto blanco para los items */
+    border-radius: 4px;
+    padding: 8px 16px;
+}
+
+.dropdown-item i {
+    width: 20px;
+}
+
+.dropdown-item:hover {
+    background-color: rgba(255, 255, 255, 0.1); /* Fondo semi-transparente al hover */
+    color: white;
+}
+
+/* Línea divisoria en el dropdown */
+.dropdown-divider {
+    border-color: rgba(255, 255, 255, 0.2); /* Línea divisoria semi-transparente */
+    margin: 4px 0;
+}
+
+/* Estilos del botón del perfil */
+#userProfile .btn {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: linear-gradient(to top, #f31986, #6901e1);
+    color: white;
+    border: none;
+    z-index: 1050; /* Asegura que el botón esté por encima de otros elementos */
+    position: relative; /* Para que el z-index tenga efecto */
+}
+
+/* Estilos para el hover del botón */
+#userProfile .btn:hover {
+    background: linear-gradient(to top, #d41573, #5801bd);
+    color: white;
+}
+
+/* Estilos para cuando el botón está activo/presionado */
+#userProfile .btn:active {
+    background: linear-gradient(to top, #f31986, #6901e1);
+    color: white;
+}
+
+/* Estilos para cuando el dropdown está abierto */
+#userProfile .btn.show {
+    background: linear-gradient(to top, #f31986, #6901e1);
+    color: white;
+}
+
+/* Ajuste para la flecha del dropdown */
+.dropdown-toggle::after {
+    border-top-color: white;
+}

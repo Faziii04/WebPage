@@ -1,0 +1,481 @@
+/* ====== IMPORTS ====== */
+@import url('https://fonts.googleapis.com/css2?family=Hanalei+Fill&family=Jacquarda+Bastarda+9&family=Jacques+Francois+Shadow&family=Leckerli+One&family=Rubik+Glitch&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Hanalei+Fill&family=Jacquarda+Bastarda+9&family=Jacques+Francois+Shadow&family=Leckerli+One&family=Rubik+Glitch&display=swap');
+/* ====== VARIABLES ====== */
+:root {
+    --mobile-breakpoint: 480px;
+    --tablet-breakpoint: 768px;
+    --desktop-breakpoint: 1024px;
+    --large-desktop-breakpoint: 1200px;
+    --gradient-primary: linear-gradient(to top, #f31986, #6901e1);
+    --gradient-card: linear-gradient(-45deg, #f89b29 0%, #ff0f7b 100%);
+}
+
+/* Estilos para el icono del libro */
+.book-icon {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 0.5rem;
+}
+
+.book {
+    position: relative;
+    width: 48px;
+    height: 60px;
+    cursor: pointer;
+    transform-style: preserve-3d;
+    perspective: 1500px;
+}
+
+/* Portada del libro */
+.cover {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to right, #6901e1, #f31986); /* Nuevo gradiente */
+    border-radius: 2px;
+    border-top-right-radius: 1px;
+    border-bottom-right-radius: 1px;
+    transform-origin: left;
+    transition: transform 0.3s;
+}
+
+/* Lomo del libro */
+.spine {
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background-color: #6901e1; /* Color del lomo ajustado */
+    border-top-left-radius: 2px;
+    border-bottom-left-radius: 2px;
+}
+
+/* Páginas */
+.page {
+    position: absolute;
+    background-color: #ffffff; /* Color de las páginas ajustado */
+    border-top-right-radius: 1px;
+    border-bottom-right-radius: 1px;
+    transform-origin: left;
+    transition: transform 0.3s;
+    z-index: -1;
+    
+}
+
+.page-1 {
+    inset: 2.5px;
+}
+
+.page-2 {
+    inset: 2px;
+}
+
+.page-3 {
+    inset: 1.5px;
+}
+
+.page-4 {
+    inset: 1px;
+}
+
+/* Contraportada */
+.back-cover {
+    position: absolute;
+    inset: 0;
+    background-color: #6901e1; /* Color de la contraportada ajustado */
+    border-radius: 2px;
+    border-top-right-radius: 1px;
+    border-bottom-right-radius: 1px;
+    z-index: -1;
+}
+
+/* Animaciones al hover */
+.book:hover .cover {
+    transform: rotateY(-60deg);
+}
+
+.book:hover .page-4 {
+    transform: rotateY(-45deg);
+}
+
+.book:hover .page-3 {
+    transform: rotateY(-30deg);
+}
+
+.book:hover .page-2 {
+    transform: rotateY(-15deg);
+}
+
+/* Efecto de presión */
+.book:active {
+    transform: translate(2px, 2px);
+    transition: transform 0.3s;
+}
+
+/* ====== ESTILOS GENERALES ====== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Hanalei Fill", system-ui;
+    font-weight: 400;
+    font-style: normal;
+    line-height: 1.6;
+    min-height: 100vh;
+    width: 100%;
+    background: var(--gradient-primary) !important;
+    display: flex;
+    flex-direction: column;
+    box-shadow: inset 0px 2px 3px rgba(0, 0, 0, 0.25);
+}
+.h2 {
+    font-size: 3rem;
+    font-family: "Rubik Glitch", system-ui;
+    font-weight: 400;
+    font-style: normal;
+    color: antiquewhite;
+}
+
+main {
+    flex: 1;
+}
+
+.container {
+    max-width: 1140px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* ====== NAVBAR PERSONALIZACIÓN ====== */
+.navbar {
+    background-color: rgba(0, 0, 0, 0.8) !important;
+    backdrop-filter: blur(5px);
+    margin-bottom: 2rem;
+}
+
+.i {
+    width: 50px;
+    height: 50px;
+    margin-right: 10px;
+}
+
+.navbar-brand {
+    font-size: 1.8rem;
+    color: antiquewhite !important;
+}
+
+/* ====== SECCIÓN DE CARDS ====== */
+.cards-section {
+    margin: 2rem auto;
+    width: 100%;
+}
+
+.row {
+    row-gap: 3rem;
+    column-gap: 2rem;
+    justify-content: center;
+    margin: 0 auto;
+}
+
+.col {
+    display: flex;
+    justify-content: center;
+    padding: 1rem;
+    flex: 0 0 auto;
+}
+
+/* ====== CARDS ====== */
+.card {
+    position: relative;
+    width: 340px;
+    height: 430px;
+    margin: 0;
+    background: var(--gradient-card);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    transition: all 0.6s cubic-bezier(0.23, 1, 0.320, 1);
+}
+
+.card img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+    transition: all 0.6s cubic-bezier(0.23, 1, 0.320, 1);
+}
+
+.card:hover {
+    transform: rotate(-5deg) scale(1.0);
+    box-shadow: 5px 5px 10px 15px rgba(0, 0, 0, 0.349);
+    z-index: 2;
+}
+
+.card__content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(-45deg);
+    width: 100%;
+    height: 100%;
+    padding: 20px;
+    background-color: #fff;
+    opacity: 0;
+    transition: all 0.6s cubic-bezier(0.23, 1, 0.320, 1);
+}
+
+.card:hover .card__content {
+    transform: translate(-50%, -50%) rotate(0deg);
+    opacity: 1;
+}
+
+.card__title {
+    margin: 0;
+    font-size: 24px;
+    color: #333;
+    font-weight: 700;
+}
+
+.card__description {
+    margin: 10px 0 0;
+    font-size: 14px;
+    color: #222222;
+    line-height: 1.4;
+}
+
+/* ====== FOOTER ====== */
+.site-footer {
+    background: linear-gradient(to bottom, rgba(243, 25, 134, 0.95), rgba(105, 1, 225, 0.95));
+    color: white;
+    padding: 4rem 0 2rem;
+    margin-top: 3rem;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 -10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 3rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.footer-section {
+    text-align: center;
+}
+
+.footer-section h3 {
+    font-family: "Rubik Glitch", system-ui;
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+    color: antiquewhite;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.footer-links {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-links li {
+    margin-bottom: 1rem;
+}
+
+.footer-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+    display: inline-block;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+.footer-links a:hover {
+    background: rgba(255, 255, 255, 0.1);
+    transform: translateX(5px);
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+}
+
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-top: 1rem;
+}
+
+.social-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.5rem;
+    transition: all 0.3s ease;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.social-links a:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.footer-bottom {
+    text-align: center;
+    margin-top: 3rem;
+    padding-top: 2rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.footer-bottom p {
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+/* ====== MEDIA QUERIES ====== */
+@media (min-width: 992px) {
+    .row {
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+    
+    .col {
+        width: calc(33.333% - 2rem);
+        max-width: 310px;
+    }
+
+    .card, .card img {
+        width: 310px;
+        height: 510px;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+    .row {
+        max-width: 800px;
+        margin: 0 auto;
+    }
+    
+    .col {
+        width: calc(50% - 2rem);
+        max-width: 310px;
+    }
+
+    .card, .card img {
+        width: 300px;
+        height: 510px;
+    }
+}
+
+@media (max-width: 767px) {
+    .row {
+        max-width: 100%;
+        padding: 0 1rem;
+    }
+    
+    .col {
+        width: 100%;
+        max-width: 310px;
+    }
+
+    .navbar-brand {
+        font-size: 1.4rem;
+    }
+
+    .footer-content {
+        grid-template-columns: 1fr;
+    }
+
+    .card, .card img {
+        width: 300px;
+        height: 510px;
+    }
+}
+
+@media (max-width: 480px) {
+    .navbar-brand {
+        font-size: 1.2rem;
+    }
+
+    .card, .card img {
+        width: 270px;
+        height: 460px;
+    }
+}
+/* Estilos del menú dropdown */
+.dropdown-menu {
+    min-width: 200px;
+    background: linear-gradient(to top, #f31986, #6901e1);
+    border: none;
+    padding: 8px;
+}
+
+.dropdown-item {
+    color: white !important; /* Texto blanco para los items */
+    border-radius: 4px;
+    padding: 8px 16px;
+}
+
+.dropdown-item i {
+    width: 20px;
+}
+
+.dropdown-item:hover {
+    background-color: rgba(255, 255, 255, 0.1); /* Fondo semi-transparente al hover */
+    color: white;
+}
+
+/* Línea divisoria en el dropdown */
+.dropdown-divider {
+    border-color: rgba(255, 255, 255, 0.2); /* Línea divisoria semi-transparente */
+    margin: 4px 0;
+}
+
+/* Estilos del botón del perfil */
+#userProfile .btn {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: linear-gradient(to top, #f31986, #6901e1);
+    color: white;
+    border: none;
+}
+
+/* Estilos para el hover del botón */
+#userProfile .btn:hover {
+    background: linear-gradient(to top, #d41573, #5801bd);
+    color: white;
+}
+
+/* Estilos para cuando el botón está activo/presionado */
+#userProfile .btn:active {
+    background: linear-gradient(to top, #f31986, #6901e1);
+    color: white;
+}
+
+/* Estilos para cuando el dropdown está abierto */
+#userProfile .btn.show {
+    background: linear-gradient(to top, #f31986, #6901e1);
+    color: white;
+    display: none;
+}
+
+/* Ajuste para la flecha del dropdown */
+.dropdown-toggle::after {
+    border-top-color: white;
+}
